@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Initializing...</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background: radial-gradient(circle at top, #0f0f0f, #000);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Orbitron', sans-serif;
+            color: #00f7ff;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            animation: fadeIn 2s ease forwards;
+        }
+
+        h1 {
+            font-size: 40px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px #00f7ff;
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 18px;
+            opacity: 0.7;
+        }
+
+        .btn {
+            margin-top: 40px;
+            padding: 15px 40px;
+            font-size: 18px;
+            background: transparent;
+            border: 2px solid #00f7ff;
+            color: #00f7ff;
+            cursor: pointer;
+            transition: 0.3s;
+            letter-spacing: 2px;
+        }
+
+        .btn:hover {
+            background: #00f7ff;
+            color: black;
+            box-shadow: 0 0 30px #00f7ff;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* glitch effect */
+        .glitch {
+            position: relative;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            color: #ff0055;
+        }
+
+        .glitch::before {
+            animation: glitchTop 1s infinite linear alternate-reverse;
+        }
+
+        .glitch::after {
+            animation: glitchBottom 1s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitchTop {
+            0% { clip-path: inset(0 0 80% 0); transform: translate(-2px, -2px); }
+            100% { clip-path: inset(0 0 0 0); transform: translate(2px, 2px); }
+        }
+
+        @keyframes glitchBottom {
+            0% { clip-path: inset(80% 0 0 0); transform: translate(2px, 2px); }
+            100% { clip-path: inset(0 0 0 0); transform: translate(-2px, -2px); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="glitch" data-text=" ACCESSING VIKS PROFILE
+">
+            ACCESSING VIKS PROFILE
+        </h1>
+
+        <p>Authenticating Gamer Identity...</p>
+
+        <button class="btn" onclick="enterSite()">ENTER</button>
+    </div>
+
+    <script>
+        function enterSite() {
+            window.location.href = "profile.html";
+        }
+    </script>
+
+</body>
+</html>
