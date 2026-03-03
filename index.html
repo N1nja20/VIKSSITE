@@ -70,37 +70,58 @@
         }
 
         /* glitch effect */
-        .glitch {
-            position: relative;
-        }
+   .glitch {
+    position: relative;
+    font-size: 70px;
+    font-family: 'Orbitron', sans-serif;
+    color: #ff0055;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1;
+}
 
-        .glitch::before,
-        .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            color: #ff0055;
-        }
+/* Cyan Layer */
+.glitch::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 2px;
+    width: 100%;
+    color: #00ffff;
+    clip-path: inset(0 0 0 0);
+    animation: glitchTop 2s infinite linear alternate;
+}
 
-        .glitch::before {
-            animation: glitchTop 1s infinite linear alternate-reverse;
-        }
+/* Pink Shift Layer */
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: -2px;
+    width: 100%;
+    color: #ff0055;
+    clip-path: inset(0 0 0 0);
+    animation: glitchBottom 2s infinite linear alternate;
+}
 
-        .glitch::after {
-            animation: glitchBottom 1s infinite linear alternate-reverse;
-        }
+/* Glitch Animations */
+@keyframes glitchTop {
+    0%   { clip-path: inset(0 0 80% 0); }
+    20%  { clip-path: inset(10% 0 60% 0); }
+    40%  { clip-path: inset(40% 0 30% 0); }
+    60%  { clip-path: inset(20% 0 50% 0); }
+    80%  { clip-path: inset(60% 0 10% 0); }
+    100% { clip-path: inset(0 0 80% 0); }
+}
 
-        @keyframes glitchTop {
-            0% { clip-path: inset(0 0 80% 0); transform: translate(-2px, -2px); }
-            100% { clip-path: inset(0 0 0 0); transform: translate(2px, 2px); }
-        }
-
-        @keyframes glitchBottom {
-            0% { clip-path: inset(80% 0 0 0); transform: translate(2px, 2px); }
-            100% { clip-path: inset(0 0 0 0); transform: translate(-2px, -2px); }
-        }
+@keyframes glitchBottom {
+    0%   { clip-path: inset(80% 0 0 0); }
+    20%  { clip-path: inset(60% 0 10% 0); }
+    40%  { clip-path: inset(30% 0 40% 0); }
+    60%  { clip-path: inset(50% 0 20% 0); }
+    80%  { clip-path: inset(10% 0 60% 0); }
+    100% { clip-path: inset(80% 0 0 0); }
+}
     </style>
 </head>
 <body>
