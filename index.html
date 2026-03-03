@@ -3,7 +3,6 @@
 <head>
     <title>Initializing...</title>
 
-    <!-- IMPORTANT FOR MOBILE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
@@ -31,6 +30,9 @@
             animation: fadeIn 2s ease forwards;
             max-width: 95%;
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* ensures horizontal center */
         }
 
         h1 {
@@ -38,7 +40,7 @@
             letter-spacing: 2px;
             text-shadow: 0 0 15px #00f7ff;
             line-height: 1.2;
-            margin: 0 auto;
+            margin: 0;
         }
 
         p {
@@ -80,7 +82,7 @@
             text-transform: uppercase;
             line-height: 1;
             white-space: nowrap;
-            display: inline-block;
+            display: block; /* changed from inline-block */
         }
 
         .glitch::before,
