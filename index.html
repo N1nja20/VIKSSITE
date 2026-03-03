@@ -2,6 +2,10 @@
 <html>
 <head>
     <title>Initializing...</title>
+
+    <!-- IMPORTANT FOR MOBILE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -11,7 +15,7 @@
         }
 
         body {
-            height: 100vh;
+            min-height: 100vh;
             background: radial-gradient(circle at top, #0f0f0f, #000);
             display: flex;
             justify-content: center;
@@ -19,29 +23,33 @@
             font-family: 'Orbitron', sans-serif;
             color: #00f7ff;
             overflow: hidden;
+            padding: 20px; /* prevents edge cut on small screens */
         }
 
         .container {
             text-align: center;
             animation: fadeIn 2s ease forwards;
+            max-width: 600px;
+            width: 100%;
         }
 
         h1 {
-            font-size: 40px;
+            font-size: clamp(24px, 5vw, 40px); /* responsive font */
             letter-spacing: 3px;
             text-shadow: 0 0 20px #00f7ff;
+            line-height: 1.2;
         }
 
         p {
             margin-top: 20px;
-            font-size: 18px;
+            font-size: clamp(14px, 3.5vw, 18px); /* responsive */
             opacity: 0.7;
         }
 
         .btn {
             margin-top: 40px;
             padding: 15px 40px;
-            font-size: 18px;
+            font-size: clamp(14px, 3.5vw, 18px);
             background: transparent;
             border: 2px solid #00f7ff;
             color: #00f7ff;
@@ -98,8 +106,7 @@
 <body>
 
     <div class="container">
-        <h1 class="glitch" data-text=" ACCESSING VIKS PROFILE
-">
+        <h1 class="glitch" data-text="ACCESSING VIKS PROFILE">
             ACCESSING VIKS PROFILE
         </h1>
 
